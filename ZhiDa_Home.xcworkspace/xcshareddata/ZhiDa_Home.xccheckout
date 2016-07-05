@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>042DC309-D2CF-44F3-A733-6C969B273C41</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ZhiDa_Home</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>4C65B10BC8B0443CE9E71222E4BAF40EE6E0E517</key>
+		<string>https://github.com/zzl493743016/ZhiDa_Home.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ZhiDa_Home.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>4C65B10BC8B0443CE9E71222E4BAF40EE6E0E517</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/zzl493743016/ZhiDa_Home.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>4C65B10BC8B0443CE9E71222E4BAF40EE6E0E517</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>4C65B10BC8B0443CE9E71222E4BAF40EE6E0E517</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ZhiDa_Home</string>
+		</dict>
+	</array>
+</dict>
+</plist>
