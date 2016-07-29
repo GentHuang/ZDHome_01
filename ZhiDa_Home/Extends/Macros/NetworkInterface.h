@@ -32,21 +32,21 @@
 //
 //#else
 ////志达测试
-//#define NEWSIMGURL @"http://183.238.196.216:8088/"
-//#define IMGURL @"http://183.238.196.216:8000/uploadfiles/images/%@"
-//#define TESTMAINURL @"http://183.238.196.216:8088/"
-//#define TESTIMGURL @"http://183.238.196.216:8000/"
-//#define DESIGNIMGURL @"http://183.238.196.216:8000/uploadfiles/images/%@"
-//#define TESTIMGEURL @"http://183.238.196.216:8000%@"
+#define NEWSIMGURL @"http://183.238.196.216:8088/"
+#define IMGURL @"http://183.238.196.216:8000/uploadfiles/images/%@"
+#define TESTMAINURL @"http://183.238.196.216:8088/"
+#define TESTIMGURL @"http://183.238.196.216:8000/"
+#define DESIGNIMGURL @"http://183.238.196.216:8000/uploadfiles/images/%@"
+#define TESTIMGEURL @"http://183.238.196.216:8000%@"
 //#endif
 
 // 正式接口
-#define NEWSIMGURL @"http://app2016.zhidajj.com/"
-#define IMGURL @"http://www.zhidajj.com/uploadfiles/images/%@"
-#define TESTMAINURL @"http://app2016.zhidajj.com/"
-#define TESTIMGURL @"http://www.zhidajj.com/"
-#define DESIGNIMGURL @"http://www.zhidajj.com/uploadfiles/images/%@"
-#define TESTIMGEURL @"http://www.zhidajj.com%@"
+//#define NEWSIMGURL @"http://app2016.zhidajj.com/"
+//#define IMGURL @"http://www.zhidajj.com/uploadfiles/images/%@"
+//#define TESTMAINURL @"http://app2016.zhidajj.com/"
+//#define TESTIMGURL @"http://www.zhidajj.com/"
+//#define DESIGNIMGURL @"http://www.zhidajj.com/uploadfiles/images/%@"
+//#define TESTIMGEURL @"http://www.zhidajj.com%@"
 
 // 志达布艺
 // 获取所有年限

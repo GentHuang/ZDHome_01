@@ -177,6 +177,10 @@
     _page = 1;
     [_tableView.footer resetNoMoreData];
     __block ZDHOrderView *selfView = self;
+    
+    //add 添加搜索size
+    _vcViewModel.searchSizeString = @"";
+    
     [_vcViewModel getOrderListWithMemberid:[ZDHSellMan shareInstance].sellManID page:_page success:^(NSMutableArray *resultArray) {
         //获取成功
         [selfView.tableView reloadData];
@@ -192,6 +196,8 @@
     _page ++;
     __block ZDHOrderView *selfView = self;
     __block ZDHMyOrderViewOrderViewModel *selfViewModel = _vcViewModel;
+    //add 添加搜索size
+    _vcViewModel.searchSizeString = @"";
     [_vcViewModel getOrderListWithMemberid:[ZDHSellMan shareInstance].sellManID page:_page success:^(NSMutableArray *resultArray) {
         //获取成功
         [selfView.tableView reloadData];
@@ -257,11 +263,14 @@
     //收起键盘
     [_topTextField resignFirstResponder];
     
-    //测试了页码最大目前是15页。PS:如果能知道何时加载到最后一页，就可以做相应的循环，不用写死.
+    if (_topTextField.text.length==0)return;
+
     __block ZDHOrderView *selfView = self;
+    _page =1;
     __block ZDHMyOrderViewOrderViewModel *selfViewModel = _vcViewModel;
-    for(int i=0;i<15;i++){
-        _page ++;
+    
+    _vcViewModel.searchSizeString = @"1000";
+    for(int i=0;i<1;i++){
         [_vcViewModel getOrderListWithMemberid:[ZDHSellMan shareInstance].sellManID page:_page success:^(NSMutableArray *resultArray) {
             //获取成功
             [selfView searchResultData];

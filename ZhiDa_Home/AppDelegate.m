@@ -108,8 +108,8 @@
     NSDate *date = [[NSUserDefaults standardUserDefaults] objectForKey:@"RecordBackgroundDate"];
     //计算时间间隔
     NSTimeInterval num = [getForegroundDate timeIntervalSinceDate:date];
-    //设置最小时间间隔,单位秒,设计为20分钟
-    int  intervalTime = 60*20;
+    //设置最小时间间隔,单位秒,设计为20分钟- - >客户需求改为3个小时  PS: 也不知道行不行
+    int  intervalTime = 60*180;
     if (num>intervalTime) {
         //退出登录
         [[NSNotificationCenter defaultCenter] postNotificationName:@"LogoutRequest" object:self];

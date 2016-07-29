@@ -24,7 +24,14 @@
         _dataOrderListArray = [NSMutableArray array];
     }
     //组建请求字符串
-    NSString *urlString = [NSString stringWithFormat:kGetOrderListAPI,memberID,@"5",[NSString stringWithFormat:@"%ld",(long)page]];
+    NSString *urlString = nil;
+    if ([_searchSizeString isEqualToString:@"1000"]) {
+        urlString = [NSString stringWithFormat:kGetOrderListAPI,memberID,_searchSizeString,[NSString stringWithFormat:@"%ld",(long)page]];
+    }else {
+    
+    urlString = [NSString stringWithFormat:kGetOrderListAPI,memberID,@"5",[NSString stringWithFormat:@"%ld",(long)page]];
+    
+    }
     //请求数据
     [[ZDHNetworkManager sharedManager] GET:urlString parameters:nil success:^void(AFHTTPRequestOperation * opertation, id responseObject) {
         NSArray *responseArray = responseObject;

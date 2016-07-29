@@ -159,6 +159,13 @@
                 [selfView.tableView reloadData];
                 [selfView.tableView.header endRefreshing];
             } fail:^(NSError *error) {
+                
+                [_cellViewModel judgeCelliSCanUpdate];
+                //获取cell的状态
+                [_cellListViewModel storedDataWith:_cellViewModel.canUpdataModelArr withNetModel:_cellViewModel.dataModelFromNetArr];
+                //发出通知
+                [selfView creatMessgeNotification];
+                
                 //获取失败
                 [selfView.tableView reloadData];
                 [selfView.tableView.header endRefreshing];

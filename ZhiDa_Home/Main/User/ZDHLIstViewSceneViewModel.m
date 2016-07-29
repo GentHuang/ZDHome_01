@@ -40,11 +40,17 @@
     //下载队列
     NSOperationQueue *operationQueue = [[NSOperationQueue alloc] init];
     __block long long ZIPSize;
+    NSLog(@"连接 %@",urlArray);
    //测试需求在链接添加端口8000
     for (NSString *url in urlArray) {// (NSString *url in urlArray)
     //转换成网址的格式（原URL带中文）
         
-        NSMutableString *urlString = (NSMutableString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,(CFStringRef)url,NULL,NULL,kCFStringEncodingUTF8));
+//        NSMutableString *urlString = (NSMutableString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,(CFStringRef)url,NULL,NULL,kCFStringEncodingUTF8));
+        
+       NSString *urlString = CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,(CFStringRef)url,NULL,NULL,kCFStringEncodingUTF8));
+        //测试版   - - -  正式版记得删除
+//        [urlString insertString:@":8000" atIndex:22];
+       urlString = [urlString stringByReplacingOccurrencesOfString:@"/uploadfiles"withString:@":8000/uploadfiles"];
         
         NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlString]];
         [request setHTTPMethod:@"HEAD"];
@@ -62,14 +68,18 @@
                  }
              }
              //队列满了就弹出
-             if (_requestCount == urlArray.count) {
+             if ((_requestCount+2) == urlArray.count) {
                  successBlock(_realSizeArray,nil);
              }
+             
+             
          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
 //             NSLog(@"Error: %@", error);
          }];
         [operationQueue addOperation:operation];
     }
+    
+    
 }
 
 #pragma mark myMethod

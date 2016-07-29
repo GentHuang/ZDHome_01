@@ -12,6 +12,10 @@
 @property (strong, nonatomic) NSMutableArray *dataDetailArray;
 @property (strong, nonatomic) NSMutableArray *dataOpinionArray;
 @property (strong, nonatomic) NSMutableArray *dataResponseArray;
+
+//搜索标志
+@property (copy, nonatomic) NSString *searchSizeString;
+
 //获取预约单列表
 - (void)getOrderListWithMemberid:(NSString *)memberID page:(NSInteger)page success:(SuccessBlock)success fail:(FailBlock)fail;
 //获取预约详情

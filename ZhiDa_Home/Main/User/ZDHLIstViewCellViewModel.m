@@ -179,7 +179,13 @@
     NSLog(@"下载队列URl ----》%@",url);
     //转换成网址的格式（原URL带中文）
     _downloadSizeBytes = 0;
-    NSMutableString *urlString = (NSMutableString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,(CFStringRef)url,NULL,NULL,kCFStringEncodingUTF8));
+    NSString *urlString = CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,(CFStringRef)url,NULL,NULL,kCFStringEncodingUTF8));
+    
+    //测试版   - - -  正式版记得删除
+//    [urlString insertString:@":8000" atIndex:22];
+   urlString = [urlString stringByReplacingOccurrencesOfString:@"/uploadfiles"withString:@":8000/uploadfiles"];
+
+    
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlString]];
     [request setHTTPMethod:@"GET"];
